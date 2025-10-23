@@ -1,0 +1,4 @@
+Ýlk aþamada projeyi Beyin (UstaPlatform.Domain), Eklentiler (UstaPlatform.Rules) ve Ana Program (UstaPlatform.App) olarak üçe ayýrdým. 
+1-Beyin (UstaPlatform.Domain): Bu projeye Usta, IsEmri gibi temel sýnýflarý ve en önemlisi, tüm fiyat kurallarýnýn uymak zorunda olduðu IPricingRule adýnda bir arayüz (bir nevi þablon) koydum. Bu proje en temelde duruyor ve kimseye baðýmlý deðil.
+2- Eklentiler (UstaPlatform.Rules): Bunlar Rules.Haftasonu gibi küçük projeler. Hepsi Domain'deki IPricingRule þablonunu alýp içini dolduruyor .Her biri ayrý bir .dll dosyasý üretiyor.
+3-UstaPlatform.App (Ana Program): Burasý konsol uygulamasý. Ýçine PricingEngine (Fiyat Motoru) adýnda bir sýnýf yazdým. Bu motor program açýlýrken plugins diye bir klasöre bakýyor, içindeki tüm .dll'leri bulup okuyor ve IPricingRule þablonuna uyan kurallarý hafýzaya atýyor. Fiyat hesaplarken de bu listedeki tüm kurallarý sýrayla çalýþtýrýyor.
