@@ -11,7 +11,7 @@ var yuklenenKurallar = loader.LoadRules(pluginPath);
 
 var pricingEngine = new PricingEngine(yuklenenKurallar);
 
-// 2. Test Verisi Oluştur
+// Test Verisi Oluştur
 var vatandas1 = new Vatandas { ID = 5, Ad = "Kader" };
 var usta1 = new Usta { ID = 101, Ad = "Ahmet Usta", UzmanlikAlani = "Tesisat" };
 var talep1 = new Talep
@@ -22,7 +22,7 @@ var talep1 = new Talep
     KayitZamani = DateTime.Now
 };
 
-// 3. İş Emirlerini Oluştur
+//  İş Emirlerini Oluştur
 // BİR HAFTA SONU İŞ EMRİ
 var isEmri1_Haftasonu = new IsEmri
 {
@@ -42,11 +42,7 @@ var isEmri2_Haftaici = new IsEmri
     PlanlananTarih = new DateTime(2025, 10, 23, 11, 0, 0), // Bu bir Perşembe
     TemelUcret = 120.0m
 };
-// 4. FİYATLARI HESAPLAMA
 
 Console.WriteLine("\nFiyatlar Hesaplanıyor...");
 pricingEngine.CalculatePrice(isEmri1_Haftasonu);
 pricingEngine.CalculatePrice(isEmri2_Haftaici);
-
-Console.WriteLine("\n========================================");
-Console.WriteLine("Demo Bitti.");
